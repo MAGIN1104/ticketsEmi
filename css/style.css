@@ -32,7 +32,7 @@ body{
     border-radius: 18px;
     /* contornos a diferencia de border no ocupan espacio, pueden no ser rectangulares */
     outline: none;
-    color: #fff;
+    color: #000000;
     /* tama;o de contenedor */
     box-sizing:border-box;
     font-size: 13px;
