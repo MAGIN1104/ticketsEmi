@@ -9,6 +9,7 @@
             $direccion  =$_POST['unidad'];
             $asunto     =$_POST['asunto'];
             $mensaje    =$_POST['mensaje'];
+
             nuevoTicket($nombre,$apellido,$correo,$celular,$direccion,$asunto,$mensaje);
     }
 ?>
@@ -25,7 +26,14 @@
 
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src='https://www.google.com/recaptcha/api.js?render=6Lchev8bAAAAAEQJog5Om2_TmxxVQMJNagMBO7oa'> 
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script type="text/javascript">
+          var onloadCallback = function() {
+              alert("grecaptcha is ready!");
+          };
+      </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<!--    <script src='https://www.google.com/recaptcha/api.js?render=6Lchev8bAAAAAEQJog5Om2_TmxxVQMJNagMBO7oa'> -->
     </script>
     <title>EMI-REPORT</title>
   </head>
@@ -40,7 +48,7 @@
             &nbsp;
             <div class="col-auto">
 
-              <form class="formulario"  method="POST">
+              <form class="formulario" id="validateGC" method="POST">
                 <h6>Nombres<span style="color: red">*</span></h6>
                 <input
                   class="form-control"
@@ -74,13 +82,16 @@
                 <h6>Celular</h6>
                 <input
                   class="form-control"
-                  type="text"
+                  type="number"
                   id="celular"
                   name="celular"
                   placeholder="Ingrese su número de contacto"
                   autocomplete="off"
+                  min="60000000"
+                  max="79999999"
+                  maxlength="8"
                 />&nbsp;
-                  <div id="alerta" class="alert alert-danger" onblur="celular()" role="alert" style="display: none;">
+                  <div id="alerta" class="alert alert-danger"  role="alert" style="display: none">
                       Introduzca un número valido!
                   </div>
                   <h6>Unidad/Dirección</h6>
@@ -114,7 +125,7 @@
                   <br>
                   <div class="g-recaptcha" data-sitekey="6LdfB1ocAAAAALBc0K1w-RymD9dsNmxjpTfYFRHx"></div>
                   <br>
-                <input class="form-control btn-primary"  type="submit" value="REPORTAR">
+                <input id="btn" class="form-control btn-primary"  type="submit" value="REPORTAR">
               </form>
             </div>
           </div>

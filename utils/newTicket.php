@@ -1,6 +1,6 @@
 <?php
 require_once 'RequestTracker.php';
-
+require_once 'encrypData.php';
 function validarUrl(&$url) {
     $cabeceras = @get_headers($url);
     if ($cabeceras === false) return false; // Cuando no funciona el servidor
@@ -15,13 +15,14 @@ function validarUrl(&$url) {
 }
 
 function nuevoTicket($nombres, $apellidos, $correo, $celular, $direccion, $asunto, $mensaje){
-    $username = "diego";
-    $password = "diego";
     $solicitante = "magin1104@gmail.com";
     $rt_queue = "Incidents";
-    $url = "http://34.125.59.98:8080";
+    $url = base64_decode(cip());
     if(validarUrl($url)){
-        $rt = new RequestTracker($url, $username, $password);
+        echo "<div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">"."Su solicitud se registro con exito.".
+            "<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>".
+            "</div>";
+        $rt = new RequestTracker($url, base64_decode(cuname()), base64_decode(cpwd()));
         $content = array(
             'Queue'=>$rt_queue,
             'Requestor'=>$solicitante,
@@ -33,9 +34,12 @@ function nuevoTicket($nombres, $apellidos, $correo, $celular, $direccion, $asunt
             'CF-Celular'=>$celular,
             'CF-Dirección/Unidad afectada'=>$direccion
         );
+
+
         $rt->createTicket($content);
+
     }else{
-        echo "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">"."El servicio se encuenta inactivo".
+        echo "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">"."Sus datos no fueron enviados, debido a que el servidor se encuentra inactivo".
             "<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>".
             "</div>";
     }

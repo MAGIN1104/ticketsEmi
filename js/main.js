@@ -16,14 +16,14 @@ const typed = new Typed('.typed', {
     showCursor:true
 });
 
-function celular(){
-    var cel=document.getElementById('celular')
-    var num=parseInt(cel.value)
-    var aux = num/100000
-    var rest= num%100000
-    if(aux==6 || aux ==7 && rest>=100000 && rest<=999999){
-        document.getElementById('alerta').style.display='block';
-    }else{
-        document.getElementById('alerta').style.display='none';
+
+document.getElementById("validateGC").addEventListener("submit",function(evt)
+{
+    var response = grecaptcha.getResponse();
+    if(response.length == 0)
+    {
+        alert("Porfavor verifica que eres un humano!!!");
+        evt.preventDefault();
+        return false;
     }
-}
+});
