@@ -1,11 +1,33 @@
 body{
     /*background-color:rgb(40, 40, 40);*/
-    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("../assets/img/Background.jpg");
+    /* background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("../assets/img/Background.jpg");
     font-size: 100%;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: fixed; */
 
     /*text-align: center;*/
+    background-image: linear-gradient(
+        /* rgba(25, 209, 231, 0.5),
+        rgba(243, 17, 224, 0.5) */
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+      ), url("../assets/img/hacker.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.hero{
+    /* background-image: linear-gradient(
+    
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+      ), url("../assets/img/hacker.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; */
+}
+.kheader{
+    
 }
 .cuerpo{
     display:flex;
@@ -17,7 +39,7 @@ body{
 .contenido{
     display: flex;
     position: absolute;
-    width:50%;
+    /* width:50%; */
     height: auto;
     justify-content: center;
     align-items: center;
@@ -33,6 +55,7 @@ body{
     /* contornos a diferencia de border no ocupan espacio, pueden no ser rectangulares */
     outline: none;
     color: #000000;
+    /* color: white; */
     /* tama;o de contenedor */
     box-sizing:border-box;
     font-size: 13px;
@@ -43,10 +66,10 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
-.formulario .form-control:hover,
+/* .formulario .form-control:hover,
 .formulario textarea:hover{
     border: 2px solid #039000;
-}
+} */
 
 
 
@@ -67,7 +90,7 @@ body{
 
 /*ESTILOS CARD*/
 .card{
-    width: 30rem;
+    width: 50rem;
 }
 
 .g-recaptcha{
@@ -77,13 +100,13 @@ body{
 
 @media screen and (max-width:720px) {
     .card{
-        width:20rem
+        width:30rem
     }
     .titulo{
-        font-size: 15px;
+        font-size: 25px;
     }
     .logo{
-        width: 100%;
+        width: 70%;
 
     }
 }

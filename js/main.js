@@ -1,4 +1,4 @@
-const typed = new Typed('.typed', {
+const typed = new Typed('.escrib', {
     strings:[
         '<i class="titulo">ESCUELA MILITAR DE INGENIERÍA</i>',
         '<i class="titulo">PRESTIGIO</i>',
@@ -27,3 +27,7 @@ document.getElementById("validateGC").addEventListener("submit",function(evt)
         return false;
     }
 });
+
+$(document).ready(function() {
+    $('input#celular').characterCounter();
+  });

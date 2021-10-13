@@ -16,126 +16,113 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./css/style.css" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-      <script type="text/javascript">
-          var onloadCallback = function() {
-              alert("grecaptcha is ready!");
-          };
-      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script type="text/javascript">
+        var onloadCallback = function () {
+            alert("grecaptcha is ready!");
+        };
+    </script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<!--    <script src='https://www.google.com/recaptcha/api.js?render=6Lchev8bAAAAAEQJog5Om2_TmxxVQMJNagMBO7oa'> -->
     </script>
     <title>EMI-REPORT</title>
-  </head>
-  <body>
-    <div class="cuerpo">
-      <div class="contenido">
-        <img class="logo" src="./assets/img/emi.png" alt="" width="50%" />
-        <h2 class="titulo">root@emi:$~ <span class="typed"></span></h2>
-        <div class="card bg-secondary text-white">
-          <div class="card-body">
-            <h5 class="card-title">Formulario de reporte de Incidentes</h5>
-            &nbsp;
-            <div class="col-auto">
+</head>
 
-              <form class="formulario" id="validateGC" method="POST">
-                <h6>Nombres<span style="color: red">*</span></h6>
-                <input
-                  class="form-control"
-                  id="nombres"
-                  name="nombres"
-                  type="text"
-                  placeholder="Ingrese su nombre"
-                  autocomplete="off"
-                  required
-                />&nbsp;
-                <h6>Apellidos<span style="color: red">*</span></h6>
-                <input
-                  class="form-control"
-                  id="apellidos"
-                  name="apellidos"
-                  type="text"
-                  placeholder="Ingrese su apellido paterno y materno"
-                  autocomplete="off"
-                  required
-                />&nbsp;
-                <h6>Correo Institucional<span style="color: red">*</span></h6>
-                <input
-                  class="form-control"
-                  id="correo"
-                  name="correo"
-                  type="email"
-                  placeholder="Ingrese su correo institucional"
-                  autocomplete="off"
-                  required
-                />&nbsp;
-                <h6>Celular</h6>
-                <input
-                  class="form-control"
-                  type="number"
-                  id="celular"
-                  name="celular"
-                  placeholder="Ingrese su número de contacto"
-                  autocomplete="off"
-                  min="60000000"
-                  max="79999999"
-                  maxlength="8"
-                />&nbsp;
-                  <div id="alerta" class="alert alert-danger"  role="alert" style="display: none">
-                      Introduzca un número valido!
-                  </div>
-                  <h6>Unidad/Dirección</h6>
-                  <input
-                          class="form-control"
-                          type="text"
-                          id="unidad"
-                          name="unidad"
-                          placeholder="Ingrese la dirección o unidad afectada"
-                          autocomplete="off"
-                  />&nbsp;
-                <h6>Asunto<span style="color: red">*</span></h6>
-                <input
-                  class="form-control"
-                  id="asunto"
-                  name="asunto"
-                  type="text"
-                  placeholder="Indique de que se trata el incidente"
-                  autocomplete="off"
-                  required
-                />&nbsp;
-                <h6>Mensaje<span style="color: red">*</span></h6>
-                  <textarea
-                    class="form-control"
-                    id="mensaje"
-                    name="mensaje"
-                    placeholder="Por favor describa brevemente los detalles del incidente"
-                    required
-                    style="height: 100px"
-                  ></textarea>
-                  <br>
-                  <div class="g-recaptcha" data-sitekey="6LdfB1ocAAAAALBc0K1w-RymD9dsNmxjpTfYFRHx"></div>
-                  <br>
-                <input id="btn" class="form-control btn-primary"  type="submit" value="REPORTAR">
-              </form>
+<body>
+    <section class="hero">
+        <div class="container-fluid fondo">
+            <div class="row alto align-items-center justify-content-center text-center text-light">
+                <div class="col-md-8">
+                    <!-- <h1 class="display-1"> <i class="fas fa-compact-disc fa-spin"></i> </h1> -->
+                    <h1 class="display-1"> <i class="fas fa-hat-cowboy"></i> </h1>
+                    <h3 class="display-4">IRT-EMI</h3>
+                    <p class="lead">En este sitio podras registrar incidentes de Seguridad de la Información</p>
+                    <hr class="bg-light">
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </body>
+    </section>
+    <div class="cuerpo">
+        <div class="contenido">
+            <!-- <img class="logo" src="./assets/img/emi.png" alt="" width="50%" /> -->
+            <!-- <p class="h2 titulo">root@emi:$~ <span id="escrib"></span></p> -->
+            <div class="card">
+                <div class="card-header text-center">
+                    <strong>
+                        FORMULARIO DE REPORTE DE INCIDENTES
+                    </strong>
+                </div>
+                <div class="card-body">
 
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="./js/main.js"></script>
-  <script src="http://falconmasters.com/demos/particulas/particles.min.js"></script>
-  <script src="http://falconmasters.com/demos/particulas/particulas.js"></script>
+                    <div class="col-md-12">
+
+                        <form class="formulario" id="validateGC" method="POST">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6>Nombres<span style="color: red">*</span></h6>
+                                    <input class="input-field" id="nombres" name="nombres" type="text"
+                                        placeholder="Ingrese su nombre" autocomplete="off" required />
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>Apellidos<span style="color: red">*</span></h6>
+                                    <input class="input-field" id="apellidos" name="apellidos" type="text"
+                                        placeholder="Ingrese su apellido paterno y materno" autocomplete="off"
+                                        required />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col-md-6">
+                                    <h6>Correo Institucional<span style="color: red">*</span></h6>
+                                    <input id="correo" name="correo" type="email" class="validate"
+                                        placeholder="Ingrese su correo institucional" autocomplete="off" required />
+                                    <span class="helper-text" data-error="Correo Invalido"
+                                        data-success="">ejemplo@adm.edu.bo</span>
+
+                                </div>
+                                <div class="input-field col-md-6">
+                                    <h6>Celular</h6>
+                                    <input class="input-field" type="number" class="validate" id="celular"
+                                        name="celular" placeholder="Ingrese su número de contacto" autocomplete="off"
+                                        data-length="10" />
+                                    <span class="helper-text" data-error="Numero Invalido" data-success=""></span>
+                                </div>
+                            </div>
+                            <div class="mx-3">
+                                <h6>Unidad/Dirección<span style="color: red">*</span></h6>
+                                <input class="input-field" type="text" id="unidad" name="unidad"
+                                    placeholder="Ingrese la dirección o unidad afectada" autocomplete="off" required />
+                                <h6>Asunto<span style="color: red">*</span></h6>
+                                <input class="input-field" type="text" id="asunto" name="asunto"
+                                    placeholder="Indique de que se trata el incidente" autocomplete="off" required />
+                                <h6>Mensaje<span style="color: red">*</span></h6>
+                                <textarea class="materialize-textarea" id="mensaje" name="mensaje"
+                                    placeholder="Por favor describa brevemente los detalles del incidente" required
+                                    style="height: 50px"></textarea>
+                            </div>
+                            <br>
+                            <div class="g-recaptcha" data-sitekey="6LdfB1ocAAAAALBc0K1w-RymD9dsNmxjpTfYFRHx"></div>
+                            <br>
+                            <div class="d-flex justify-content-center">
+                                <input id="btn" class="form-control btn-primary" type="submit" value="REPORTAR">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
