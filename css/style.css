@@ -26,9 +26,6 @@ body{
     background-size: cover;
     background-attachment: fixed; */
 }
-.kheader{
-    
-}
 .cuerpo{
     display:flex;
     position: relative;
