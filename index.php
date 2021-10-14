@@ -140,10 +140,8 @@
                         <br>
                         <div class="g-recaptcha" data-sitekey="6LdfB1ocAAAAALBc0K1w-RymD9dsNmxjpTfYFRHx"></div>
                         <br>
-                        <div class="justify-content-center">
-                            <input id="boton" class="form-control btn-primary"  onclick="verificar()" value="REPORTAR">
-                            <!-- <button id="boton" onclick="verificar()" class="btn btn-primary boton">REPORTAR</button> -->
-                        </div>
+
+                        <input id="boton" type="submit" class="form-control btn-primary"  onclick="verificar()" value="REPORTAR">
                         </form>
                     </div>
                 </div>
