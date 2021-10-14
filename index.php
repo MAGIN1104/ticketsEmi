@@ -26,10 +26,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.min.css">
+    <script src="./js/main.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.all.min.js"></script>
     <script type="text/javascript">
         var onloadCallback = function () {
             alert("grecaptcha is ready!");
@@ -47,7 +49,7 @@
                 <div class="col-md-8">
                     <!-- <h1 class="display-1"> <i class="fas fa-compact-disc fa-spin"></i> </h1> -->
                     <h1 class="display-1"> <i class="fas fa-hat-cowboy"></i> </h1>
-                    <h3 class="display-4">IRT-EMI</h3>
+                    <h3 class="display-4">ESCUELA MILITAR DE INGENIERÍA</h3>
                     <p class="lead">En este sitio podras registrar incidentes de Seguridad de la Información</p>
                     <hr class="bg-light">
                 </div>
@@ -58,6 +60,9 @@
         <div class="contenido">
             <!-- <img class="logo" src="./assets/img/emi.png" alt="" width="50%" /> -->
             <!-- <p class="h2 titulo">root@emi:$~ <span id="escrib"></span></p> -->
+            
+            
+            
             <div class="card">
                 <div class="card-header text-center">
                     <strong>
@@ -68,61 +73,85 @@
 
                     <div class="col-md-12">
 
-                        <form class="formulario" id="validateGC" method="POST">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h6>Nombres<span style="color: red">*</span></h6>
-                                    <input class="input-field" id="nombres" name="nombres" type="text"
-                                        placeholder="Ingrese su nombre" autocomplete="off" required />
-                                </div>
-                                <div class="col-md-6">
-                                    <h6>Apellidos<span style="color: red">*</span></h6>
-                                    <input class="input-field" id="apellidos" name="apellidos" type="text"
-                                        placeholder="Ingrese su apellido paterno y materno" autocomplete="off"
-                                        required />
-                                </div>
+                        <!-- <form class="formulario" id="validateGC" method="POST"> -->
+                        <form class="formulario" name="forms" id="validateGC" method="POST">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>
+                                    <strong>
+                                        Nombres<span style="color: red">*</span>
+                                    </strong>
+                                </h6>
+                                <input class="input-field" id="nombres" name="nombres" type="text"
+                                    placeholder="Ingrese su nombre" autocomplete="off" required />
                             </div>
+                            <div class="col-md-6">
+                                <h6>
+                                    <strong>
+                                        Apellidos<span style="color: red">*</span>
+                                    </strong>
+                                </h6>
+                                <input class="input-field" id="apellidos" name="apellidos" type="text"
+                                    placeholder="Ingrese su apellido paterno y materno" autocomplete="off" required />
+                            </div>
+                        </div>
 
-                            <div class="row">
-                                <div class="input-field col-md-6">
-                                    <h6>Correo Institucional<span style="color: red">*</span></h6>
-                                    <input id="correo" name="correo" type="email" class="validate"
-                                        placeholder="Ingrese su correo institucional" autocomplete="off" required />
-                                    <span class="helper-text" data-error="Correo Invalido"
-                                        data-success="">ejemplo@adm.edu.bo</span>
+                        <div class="row">
+                            <div class="input-field col-md-6">
+                                <h6>
+                                    <strong>
+                                        Correo Institucional<span style="color: red">*</span>
+                                    </strong>
+                                </h6>
+                                <input id="correo" name="correo" type="email" class="validate"
+                                    placeholder="Ingrese su correo institucional" autocomplete="off" required />
+                                <span class="helper-text" data-error="Correo Invalido"
+                                    data-success="">ejemplo@adm.edu.bo</span>
 
-                                </div>
-                                <div class="input-field col-md-6">
-                                    <h6>Celular</h6>
-                                    <input class="input-field" type="number" class="validate" id="celular"
-                                        name="celular" placeholder="Ingrese su número de contacto" autocomplete="off"
-                                        data-length="10" />
-                                    <span class="helper-text" data-error="Numero Invalido" data-success=""></span>
-                                </div>
                             </div>
-                            <div class="mx-3">
-                                <h6>Unidad/Dirección<span style="color: red">*</span></h6>
-                                <input class="input-field" type="text" id="unidad" name="unidad"
-                                    placeholder="Ingrese la dirección o unidad afectada" autocomplete="off" required />
-                                <h6>Asunto<span style="color: red">*</span></h6>
-                                <input class="input-field" type="text" id="asunto" name="asunto"
-                                    placeholder="Indique de que se trata el incidente" autocomplete="off" required />
-                                <h6>Mensaje<span style="color: red">*</span></h6>
-                                <textarea class="materialize-textarea" id="mensaje" name="mensaje"
-                                    placeholder="Por favor describa brevemente los detalles del incidente" required
-                                    style="height: 50px"></textarea>
+                            <div class="input-field col-md-6">
+                                <h6>
+                                    <strong>
+                                        Celular
+                                    </strong>
+                                </h6>
+                                <input class="input-field" type="number" class="validate" id="celular" name="celular"
+                                    placeholder="Ingrese su número de contacto" autocomplete="off" data-length="10" />
+                                <span class="helper-text" data-error="Numero Invalido" data-success=""></span>
                             </div>
-                            <br>
-                            <div class="g-recaptcha" data-sitekey="6LdfB1ocAAAAALBc0K1w-RymD9dsNmxjpTfYFRHx"></div>
-                            <br>
-                            <div class="d-flex justify-content-center">
-                                <input id="btn" class="form-control btn-primary" type="submit" value="REPORTAR">
-                            </div>
+                        </div>
+                        <div class="mx-3">
+
+                            <h6><strong>Unidad/Dirección<span style="color: red">*</span></strong></h6>
+                            <input class="input-field" type="text" id="unidad" name="unidad"
+                                placeholder="Ingrese la dirección o unidad afectada" autocomplete="off" required />
+                            <h6><strong>Asunto<span style="color: red">*</span></strong></h6>
+                            <input class="input-field" type="text" id="asunto" name="asunto"
+                                placeholder="Indique de que se trata el incidente" autocomplete="off" required />
+                            <h6>
+                                <strong>
+                                    Mensaje<span style="color: red">*</span>
+                                </strong>
+                            </h6>
+                            <textarea class="materialize-textarea" id="mensaje" name="mensaje"
+                                placeholder="Por favor describa brevemente los detalles del incidente" required
+                                style="height: 50px"></textarea>
+                        </div>
+                        <br>
+                        <!-- <div class="g-recaptcha" data-sitekey="6LdfB1ocAAAAALBc0K1w-RymD9dsNmxjpTfYFRHx"></div> -->
+                        <br>
+                        <div class="d-flex justify-content-center">
+                            <!-- <input id="btn" class="form-control btn-primary" type="submit" value="REPORTAR"> -->
+                            <button id="boton" onclick="verificar()" type="submit"
+                                class="btn btn-primary boton">Primary</button>
+                        </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
 </body>
+
 </html>
