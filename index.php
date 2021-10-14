@@ -74,7 +74,7 @@
                     <div class="col-md-12">
 
                         <!-- <form class="formulario" id="validateGC" method="POST"> -->
-                        <form class="formulario" name="forms" id="validateGC" method="POST">
+                        <form class="formulario" name="formulario" id="validateGC" method="POST">
                         <div class="row">
                             <div class="col-md-6">
                                 <h6>
@@ -138,7 +138,7 @@
                                 style="height: 50px"></textarea>
                         </div>
                         <br>
-                        <!-- <div class="g-recaptcha" data-sitekey="6LdfB1ocAAAAALBc0K1w-RymD9dsNmxjpTfYFRHx"></div> -->
+                        <div class="g-recaptcha" data-sitekey="6LdfB1ocAAAAALBc0K1w-RymD9dsNmxjpTfYFRHx"></div>
                         <br>
                         <div class="d-flex justify-content-center">
                             <!-- <input id="btn" class="form-control btn-primary" type="submit" value="REPORTAR"> -->

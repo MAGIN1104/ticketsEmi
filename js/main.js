@@ -17,20 +17,16 @@
 // });
 
 
-// document.getElementById("validateGC").addEventListener("submit",function(evt)
-// {
-//     var response = grecaptcha.getResponse();
-//     if(response.length == 0)
-//     {
-//         alert("Porfavor verifica que eres un humano!!!");
-//         evt.preventDefault();
-//         return false;
-//     }
-// });
-function send(){
-    var f = document.forms;
-    f.submit()
-}
+document.getElementById("validateGC").addEventListener("submit",function(evt)
+{
+    var response = grecaptcha.getResponse();
+    if(response.length == 0)
+    {
+        alert("Porfavor verifica que eres un humano!!!");
+        evt.preventDefault();
+        return false;
+    }
+});
 
 function verificar(){
     var nombre= document.getElementById("nombres").value
@@ -47,14 +43,15 @@ function verificar(){
     }else{
         if(celular!=""){
             if( parseInt(celular)>=60000000 && parseInt(celular)<=79999999){
+                document.formulario.submit()
                 AlertaSuccess();
-                send()
             }else{
                 AlertaError2();
+                return 0;
             }
         }else{
+            document.formulario.submit()
             AlertaSuccess();
-            send()
         }
     }
 
