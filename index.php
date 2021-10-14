@@ -142,7 +142,7 @@
                         <br>
                         <div class="d-flex justify-content-center">
                             <!-- <input id="btn" class="form-control btn-primary" type="submit" value="REPORTAR"> -->
-                            <button id="boton" onclick="verificar()" type="submit" class="btn btn-primary boton">REPORTAR</button>
+                            <button id="boton" onclick="verificar()" class="btn btn-primary boton">REPORTAR</button>
                         </div>
                         </form>
                     </div>
