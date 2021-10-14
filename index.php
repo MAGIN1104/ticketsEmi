@@ -16,12 +16,10 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./css/style.css" />
@@ -32,24 +30,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.all.min.js"></script>
-    <script type="text/javascript">
-        var onloadCallback = function () {
-            alert("grecaptcha is ready!");
-        };
-    </script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     </script>
     <title>EMI-REPORT</title>
 </head>
-
 <body>
     <section class="hero">
         <div class="container-fluid fondo">
             <div class="row alto align-items-center justify-content-center text-center text-light">
                 <div class="col-md-8">
-                    <!-- <h1 class="display-1"> <i class="fas fa-compact-disc fa-spin"></i> </h1> -->
-                    <h1 class="display-1"> <i class="fas fa-hat-cowboy"></i> </h1>
-                    <h3 class="display-4">ESCUELA MILITAR DE INGENIERÍA</h3>
+                    <!-- <h1 class="display-1"> <i class="fas fa-hat-cowboy"></i> </h1> -->
+                    <h1 class="display-1"><i class="fas fa-radiation fa-spin"></i></h1>
+                    
+                    <h3 class="display-4"><strong>ESCUELA MILITAR DE INGENIERÍA</strong></h3>
                     <p class="lead">En este sitio podras registrar incidentes de Seguridad de la Información</p>
                     <hr class="bg-light">
                 </div>
@@ -57,12 +50,7 @@
         </div>
     </section>
     <div class="cuerpo">
-        <div class="contenido">
-            <!-- <img class="logo" src="./assets/img/emi.png" alt="" width="50%" /> -->
-            <!-- <p class="h2 titulo">root@emi:$~ <span id="escrib"></span></p> -->
-            
-            
-            
+        <div class="contenido">     
             <div class="card">
                 <div class="card-header text-center">
                     <strong>
@@ -70,10 +58,7 @@
                     </strong>
                 </div>
                 <div class="card-body">
-
                     <div class="col-md-12">
-
-                        <!-- <form class="formulario" id="validateGC" method="POST"> -->
                         <form class="formulario" name="formulario" id="validateGC" method="POST">
                         <div class="row">
                             <div class="col-md-6">
@@ -82,8 +67,7 @@
                                         Nombres<span style="color: red">*</span>
                                     </strong>
                                 </h6>
-                                <input class="input-field" id="nombres" name="nombres" type="text"
-                                    placeholder="Ingrese su nombre" autocomplete="off" required />
+                                <input class="input-field" id="nombres" name="nombres" type="text" placeholder="Ingrese su nombre" autocomplete="off" style="text-transform:uppercase" required />
                             </div>
                             <div class="col-md-6">
                                 <h6>
@@ -92,13 +76,14 @@
                                     </strong>
                                 </h6>
                                 <input class="input-field" id="apellidos" name="apellidos" type="text"
-                                    placeholder="Ingrese su apellido paterno y materno" autocomplete="off" required />
+                                    placeholder="Ingrese su apellido paterno y materno" autocomplete="off" style="text-transform:uppercase" required />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="input-field col-md-6">
                                 <h6>
+                                    
                                     <strong>
                                         Correo Institucional<span style="color: red">*</span>
                                     </strong>
@@ -116,8 +101,8 @@
                                     </strong>
                                 </h6>
                                 <input class="input-field" type="number" class="validate" id="celular" name="celular"
-                                    placeholder="Ingrese su número de contacto" autocomplete="off" data-length="10" />
-                                <span class="helper-text" data-error="Numero Invalido" data-success=""></span>
+                                    placeholder="Ingrese su número de contacto" autocomplete="off" data-length="8" />
+                                <span class="helper-text" data-error="Numero Invalido" data-success="">65432187</span>
                             </div>
                         </div>
                         <div class="mx-3">
@@ -138,17 +123,15 @@
                                 style="height: 50px"></textarea>
                         </div>
                         <br>
-                        <div class="g-recaptcha" data-sitekey="6LdfB1ocAAAAALBc0K1w-RymD9dsNmxjpTfYFRHx"></div>
+                        <div class="g-recaptcha" id="rcaptcha" data-sitekey="6LdfB1ocAAAAALBc0K1w-RymD9dsNmxjpTfYFRHx" data-callback="enabledSubmit"></div>
                         <br>
-
-                        <input id="boton" type="submit" class="form-control btn-primary"  onclick="verificar()" value="REPORTAR">
+                        <input type="submit" class="form-control btn-primary" value="REPORTAR">
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
 </body>
 
 </html>

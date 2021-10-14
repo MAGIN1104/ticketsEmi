@@ -16,7 +16,7 @@ function validarUrl(&$url) {
 
 function nuevoTicket($nombres, $apellidos, $correo, $celular, $direccion, $asunto, $mensaje){
     $solicitante = "magin1104@gmail.com";
-    $rt_queue = "Incidentes";
+    $rt_queue = "Incidents";
     $url = base64_decode(cip());
     if(validarUrl($url)){
         echo "<div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">"."Su solicitud se registro con exito.".
@@ -26,13 +26,13 @@ function nuevoTicket($nombres, $apellidos, $correo, $celular, $direccion, $asunt
         $content = array(
             'Queue'=>$rt_queue,
             'Requestor'=>$correo,
-            'Subject'=>$asunto,
-            'Text'=>$mensaje,
-            'CF-Nombres'=>$nombres,
-            'CF-Apellidos'=>$apellidos,
+            'Subject'=>strtoupper($asunto),
+            'Text'=>strtoupper($mensaje),
+            'CF-Nombres'=> strtoupper($nombres),
+            'CF-Apellidos'=> strtoupper($apellidos),
             'CF-Correo Institucional'=>$correo,
             'CF-Celular'=>$celular,
-            'CF-Dirección/Unidad afectada'=>$direccion
+            'CF-Dirección/Unidad afectada'=>strtoupper($direccion)
         );
 
 
