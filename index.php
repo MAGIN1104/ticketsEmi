@@ -112,7 +112,7 @@
                                 placeholder="Ingrese la dirección o unidad afectada" autocomplete="off" required />
                             <h6><strong>Asunto<span style="color: red">*</span></strong></h6>
                             <input class="input-field" type="text" id="asunto" name="asunto"
-                                placeholder="Indique de que se trata el incidente" autocomplete="off" required />
+                                placeholder="Indique de que se trata el incidente" autocomplete="off" style="text-transform:uppercase" required />
                             <h6>
                                 <strong>
                                     Mensaje<span style="color: red">*</span>
@@ -120,7 +120,7 @@
                             </h6>
                             <textarea class="materialize-textarea" id="mensaje" name="mensaje"
                                 placeholder="Por favor describa brevemente los detalles del incidente" required
-                                style="height: 50px"></textarea>
+                                style="height: 50px; text-transform:uppercase;"></textarea>
                         </div>
                         <br>
                         <div class="g-recaptcha" id="rcaptcha" data-sitekey="6LdfB1ocAAAAALBc0K1w-RymD9dsNmxjpTfYFRHx" data-callback="enabledSubmit"></div>
