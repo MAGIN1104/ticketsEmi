@@ -144,7 +144,7 @@ function AlertaError2(){
 }
 function AlertaError3(){
     Swal.fire({
-        position: 'top-end',
+        position: 'center',
         icon: 'warning',
         title: 'Completa el CAPTCHA',
         text: "Verifica que eres humano...!",
