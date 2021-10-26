@@ -1,6 +1,6 @@
 <?php
     require "./utils/newTicket.php";
-
+    $dir="";
     if ($_SERVER['REQUEST_METHOD']==='POST'){
             $nombre     =$_POST['nombres'];
             $apellido   =$_POST['apellidos'];
@@ -9,8 +9,24 @@
             $direccion  =$_POST['unidad'];
             $asunto     =$_POST['asunto'];
             $mensaje    =$_POST['mensaje'];
-
-            nuevoTicket($nombre,$apellido,$correo,$celular,$direccion,$asunto,$mensaje);
+            if($direccion==1){
+                $dir = "RECTORADO";
+            }elseif ($direccion==2){
+                $dir = "VICERRECTORADO";
+            }elseif ($direccion==3){
+                $dir = "DECANATO";
+            }elseif ($direccion==4){
+                $dir = "DIRECCIÓN NACIONAL JURÍDICA";
+            }elseif ($direccion==5){
+                $dir = "AUDITORIA INTERNA";
+            }elseif ($direccion==6){
+                $dir = "UNIDAD DE TRANSPARENCIA Y LUCHA CONTRA LA CORRUPCIÓN";
+            }elseif ($direccion==7){
+                $dir = "DIRECCIÓN NACIONAL DE ASUNTOS ADMINISTRATIVOS Y FINANCIEROS";
+            }elseif ($direccion==8){
+                $dir = "ÁREA DE TESORERÍA";
+            }
+            nuevoTicket($nombre,$apellido,$correo,$celular,$dir,$asunto,$mensaje);
     }
 ?>
 
@@ -31,7 +47,6 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.all.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
-    </script>
     <title>EMI-REPORT</title>
 </head>
 <body>
@@ -107,9 +122,23 @@
                         </div>
                         <div class="mx-3">
 
-                            <h6><strong>Unidad/Dirección<span style="color: red">*</span></strong></h6>
-                            <input class="input-field" type="text" id="unidad" name="unidad"
-                                placeholder="Ingrese la dirección o unidad afectada" autocomplete="off" required />
+                            <select id="unidad" name="unidad" class="form-select" aria-label="Default select example" required="true">
+                                <option disabled selected value="">-- Unidad/Dirección --</option>
+                                <option value="1">RECTORADO</option>
+                                <option value="2">VICERRECTORADO</option>
+                                <option value="3">DECANATO</option>
+                                <option value="4">DIRECCIÓN NACIONAL JURÍDICA</option>
+                                <option value="5">AUDITORIA INTERNA</option>
+                                <option value="6">UNIDAD DE TRANSPARENCIA Y LUCHA CONTRA LA CORRUPCIÓN </option>
+                                <option value="7">DIRECCIÓN NACIONAL DE ASUNTOS ADMINISTRATIVOS Y FINANCIEROS</option>
+                                <option value="8">ÁREA DE TESORERÍA</option>
+                            </select>
+                            </br>
+<!--                            <h6><strong>Unidad/Dirección<span style="color: red">*</span></strong></h6>-->
+<!--                            <input class="input-field" type="text" id="unidad" name="unidad"-->
+<!--                                placeholder="Ingrese la dirección o unidad afectada" autocomplete="off" required />-->
+
+
                             <h6><strong>Asunto<span style="color: red">*</span></strong></h6>
                             <input class="input-field" type="text" id="asunto" name="asunto"
                                 placeholder="Indique de que se trata el incidente" autocomplete="off" style="text-transform:uppercase" required />
@@ -133,5 +162,4 @@
         </div>
     </div>
 </body>
-
 </html>
