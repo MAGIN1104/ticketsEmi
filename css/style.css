@@ -16,7 +16,7 @@ body{
     background-size: cover;
     background-attachment: fixed;
 }
-.hero{
+/*.hero{*/
     /* background-image: linear-gradient(
     
         rgba(0, 0, 0, 0.6),
@@ -25,7 +25,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed; */
-}
+/*}*/
 .cuerpo{
     display:flex;
     position: relative;
@@ -43,25 +43,25 @@ body{
     flex-direction: column;
 }
 
-.formulario .form-control,
-.formulario textarea {
-    width: 100%;
-    padding: 10px 10px;
-    border: none;
-    border-radius: 18px;
-    /* contornos a diferencia de border no ocupan espacio, pueden no ser rectangulares */
-    outline: none;
-    color: #000000;
-    /* color: white; */
-    /* tama;o de contenedor */
-    box-sizing:border-box;
-    font-size: 13px;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-    /*background: rgba(45, 45, 45, 0.56);*/
-    transition: 0.2s all;
-    font-family: 'Montserrat', sans-serif;
-}
+/*.formulario .form-control*/
+/*.formulario textarea {*/
+/*    width: 100%;*/
+/*    padding: 10px 10px;*/
+/*    border: none;*/
+/*    border-radius: 18px;*/
+/*    !* contornos a diferencia de border no ocupan espacio, pueden no ser rectangulares *!*/
+/*    outline: none;*/
+/*    color: #000000;*/
+/*    !* color: white; *!*/
+/*    !* tama;o de contenedor *!*/
+/*    box-sizing:border-box;*/
+/*    font-size: 13px;*/
+/*    letter-spacing: 1px;*/
+/*    margin-bottom: 15px;*/
+/*    !*background: rgba(45, 45, 45, 0.56);*!*/
+/*    transition: 0.2s all;*/
+/*    font-family: 'Montserrat', sans-serif;*/
+/*}*/
 
 /* .formulario .form-control:hover,
 .formulario textarea:hover{

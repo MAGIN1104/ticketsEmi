@@ -9,6 +9,7 @@
             $direccion  =$_POST['unidad'];
             $asunto     =$_POST['asunto'];
             $mensaje    =$_POST['mensaje'];
+            $evidencia  =basename($_FILES['evidencia']['name']);
             if($direccion==1){
                 $dir = "RECTORADO";
             }elseif ($direccion==2){
@@ -133,11 +134,8 @@
                                 <option value="7">DIRECCIÓN NACIONAL DE ASUNTOS ADMINISTRATIVOS Y FINANCIEROS</option>
                                 <option value="8">ÁREA DE TESORERÍA</option>
                             </select>
-                            </br>
-<!--                            <h6><strong>Unidad/Dirección<span style="color: red">*</span></strong></h6>-->
-<!--                            <input class="input-field" type="text" id="unidad" name="unidad"-->
-<!--                                placeholder="Ingrese la dirección o unidad afectada" autocomplete="off" required />-->
 
+                            </br>
 
                             <h6><strong>Asunto<span style="color: red">*</span></strong></h6>
                             <input class="input-field" type="text" id="asunto" name="asunto"
@@ -150,6 +148,7 @@
                             <textarea class="materialize-textarea" id="mensaje" name="mensaje"
                                 placeholder="Por favor describa brevemente los detalles del incidente" required
                                 style="height: 50px; text-transform:uppercase;"></textarea>
+
                         </div>
                         <br>
                         <div class="g-recaptcha" id="rcaptcha" data-sitekey="6LdfB1ocAAAAALBc0K1w-RymD9dsNmxjpTfYFRHx" data-callback="enabledSubmit"></div>
