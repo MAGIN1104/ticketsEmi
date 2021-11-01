@@ -9,7 +9,6 @@
             $direccion  =$_POST['unidad'];
             $asunto     =$_POST['asunto'];
             $mensaje    =$_POST['mensaje'];
-            $evidencia  =basename($_FILES['evidencia']['name']);
             if($direccion==1){
                 $dir = "RECTORADO";
             }elseif ($direccion==2){
@@ -26,6 +25,8 @@
                 $dir = "DIRECCIÓN NACIONAL DE ASUNTOS ADMINISTRATIVOS Y FINANCIEROS";
             }elseif ($direccion==8){
                 $dir = "ÁREA DE TESORERÍA";
+            }elseif ($direccion==0){
+                $dir = "ESTUDIANTE REGULAR";
             }
             nuevoTicket($nombre,$apellido,$correo,$celular,$dir,$asunto,$mensaje);
     }
@@ -125,6 +126,7 @@
 
                             <select id="unidad" name="unidad" class="form-select" aria-label="Default select example" required="true">
                                 <option disabled selected value="">-- Unidad/Dirección --</option>
+                                <option value="0">ESTUDIANTE REGULAR</option>
                                 <option value="1">RECTORADO</option>
                                 <option value="2">VICERRECTORADO</option>
                                 <option value="3">DECANATO</option>
