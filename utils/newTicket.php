@@ -15,29 +15,28 @@ function validarUrl(&$url) {
 }
 
 function nuevoTicket($nombres, $apellidos, $correo, $celular, $direccion, $asunto, $mensaje){
+
     $solicitante = "magin1104@gmail.com";
     $rt_queue = "Incidentes";
     $url = base64_decode(cip());
     if(validarUrl($url)){
-        echo "<div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">"."Su solicitud se registro con exito.".
-            "<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>".
-            "</div>";
+//        echo "<div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">"."Su solicitud se registro con exito.".
+//            "<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>".
+//            "</div>";
         $rt = new RequestTracker($url, base64_decode(cuname()), base64_decode(cpwd()));
-        $content = array(
+        $content = [
             'Queue'=>$rt_queue,
             'Requestor'=>$correo,
             'Subject'=>strtoupper($asunto),
-            'Text'=>strtoupper($mensaje),
+            'Text'=>$mensaje,
             'CF-Nombres'=> strtoupper($nombres),
             'CF-Apellidos'=> strtoupper($apellidos),
             'CF-Correo Institucional'=>$correo,
             'CF-Celular'=>$celular,
-            'CF-Dirección/Unidad afectada'=>strtoupper($direccion)
-        );
-
-
+            'CF-Dirección/Unidad afectada'=>strtoupper($direccion),
+//            'CF-Archivo' => $encoded_content
+        ];
         $rt->createTicket($content);
-
     }else{
         echo "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">"."Sus datos no fueron enviados, debido a que el servidor se encuentra inactivo".
             "<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>".

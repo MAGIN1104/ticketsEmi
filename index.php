@@ -1,6 +1,5 @@
 <?php
     require "./utils/newTicket.php";
-    $dir="";
     if ($_SERVER['REQUEST_METHOD']==='POST'){
             $nombre     =$_POST['nombres'];
             $apellido   =$_POST['apellidos'];
@@ -9,6 +8,10 @@
             $direccion  =$_POST['unidad'];
             $asunto     =$_POST['asunto'];
             $mensaje    =$_POST['mensaje'];
+//            $fileName   =$_FILES['evidencia']['name'];
+//            $tempPath   =$_FILES['evidencia']['tmp_name'];
+//            $fileSize   =$_FILES['evidencia']['size'];
+//            $fileType   =$_FILES['evidencia']['type'];
             if($direccion==1){
                 $dir = "RECTORADO";
             }elseif ($direccion==2){
@@ -27,6 +30,10 @@
                 $dir = "ÁREA DE TESORERÍA";
             }elseif ($direccion==0){
                 $dir = "ESTUDIANTE REGULAR";
+            }elseif ($direccion==9){
+                $dir = "UNIDAD DE DESARROLLO";
+            }elseif ($direccion==10){
+                $dir = "DOCENTE - EMI";
             }
             nuevoTicket($nombre,$apellido,$correo,$celular,$dir,$asunto,$mensaje);
     }
@@ -56,9 +63,7 @@
         <div class="container-fluid fondo">
             <div class="row alto align-items-center justify-content-center text-center text-light">
                 <div class="col-md-8">
-                    <!-- <h1 class="display-1"> <i class="fas fa-hat-cowboy"></i> </h1> -->
                     <h1 class="display-1"><i class="fas fa-radiation fa-spin"></i></h1>
-                    
                     <h3 class="display-4"><strong>ESCUELA MILITAR DE INGENIERÍA</strong></h3>
                     <p class="lead">En este sitio podras registrar incidentes de Seguridad de la Información</p>
                     <hr class="bg-light">
@@ -76,7 +81,7 @@
                 </div>
                 <div class="card-body">
                     <div class="col-md-12">
-                        <form class="formulario" name="formulario" id="validateGC" method="POST">
+                        <form class="formulario" name="formulario" id="validateGC" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-6">
                                 <h6>
@@ -135,6 +140,8 @@
                                 <option value="6">UNIDAD DE TRANSPARENCIA Y LUCHA CONTRA LA CORRUPCIÓN </option>
                                 <option value="7">DIRECCIÓN NACIONAL DE ASUNTOS ADMINISTRATIVOS Y FINANCIEROS</option>
                                 <option value="8">ÁREA DE TESORERÍA</option>
+                                <option value="9">UNIDAD DE DESARROLLO</option>
+                                <option value="10">DOCENTE - EMI</option>
                             </select>
 
                             </br>
@@ -150,7 +157,9 @@
                             <textarea class="materialize-textarea" id="mensaje" name="mensaje"
                                 placeholder="Por favor describa brevemente los detalles del incidente" required
                                 style="height: 50px; text-transform:uppercase;"></textarea>
-
+                            </br>
+<!--                            <h6><strong>Subir Evidencia<span style="color: red">*</span></strong></h6>-->
+<!--                            <input type="file" name="evidencia" required>-->
                         </div>
                         <br>
                         <div class="g-recaptcha" id="rcaptcha" data-sitekey="6LdfB1ocAAAAALBc0K1w-RymD9dsNmxjpTfYFRHx" data-callback="enabledSubmit"></div>
