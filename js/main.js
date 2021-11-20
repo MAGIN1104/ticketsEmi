@@ -20,7 +20,7 @@ function verificar(evento){
                 // document.formulario.submit()
                    if(response.length == 0)
                     {
-                        alert("Porfavor verifica que eres un humano!!!");
+                        AlertaError3();
                         evento.preventDefault();
                         return false;
                     }else{

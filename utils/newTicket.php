@@ -34,7 +34,6 @@ function nuevoTicket($nombres, $apellidos, $correo, $celular, $direccion, $asunt
             'CF-Correo Institucional'=>$correo,
             'CF-Celular'=>$celular,
             'CF-Dirección/Unidad afectada'=>strtoupper($direccion),
-//            'CF-Archivo' => $encoded_content
         ];
         $rt->createTicket($content);
     }else{
